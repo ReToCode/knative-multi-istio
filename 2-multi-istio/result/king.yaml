@@ -1,0 +1,83 @@
+apiVersion: v1
+items:
+- apiVersion: networking.internal.knative.dev/v1alpha1
+  kind: Ingress
+  metadata:
+    annotations:
+      networking.internal.knative.dev/rollout: '{"configurations":[{"configurationName":"svc-always-scaled","percent":100,"revisions":[{"revisionName":"svc-always-scaled-00001","percent":100}],"stepParams":{}}]}'
+      networking.knative.dev/ingress.class: istio.ingress.networking.knative.dev
+      serving.knative.dev/creator: system:admin
+      serving.knative.dev/lastModifier: system:admin
+      serving.knative.openshift.io/enablePassthrough: "true"
+    creationTimestamp: "2023-03-09T07:03:13Z"
+    finalizers:
+    - ingresses.networking.internal.knative.dev
+    - ocp-ingress
+    generation: 1
+    labels:
+      serving.knative.dev/route: svc-always-scaled
+      serving.knative.dev/routeNamespace: demo
+      serving.knative.dev/service: svc-always-scaled
+    name: svc-always-scaled
+    namespace: demo
+    ownerReferences:
+    - apiVersion: serving.knative.dev/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Route
+      name: svc-always-scaled
+      uid: a75e9f16-0428-4385-8b00-ee74c603eb2e
+    resourceVersion: "40756"
+    uid: 6cba371b-79cb-49bd-b54e-a24ff0756095
+  spec:
+    httpOption: Enabled
+    rules:
+    - hosts:
+      - svc-always-scaled.demo
+      - svc-always-scaled.demo.svc
+      - svc-always-scaled.demo.svc.cluster.local
+      http:
+        paths:
+        - splits:
+          - appendHeaders:
+              Knative-Serving-Namespace: demo
+              Knative-Serving-Revision: svc-always-scaled-00001
+            percent: 100
+            serviceName: svc-always-scaled-00001
+            serviceNamespace: demo
+            servicePort: 80
+      visibility: ClusterLocal
+    - hosts:
+      - svc-always-scaled-demo.apps.rlehmann-ocp-4-12.serverless.devcluster.openshift.com
+      http:
+        paths:
+        - splits:
+          - appendHeaders:
+              Knative-Serving-Namespace: demo
+              Knative-Serving-Revision: svc-always-scaled-00001
+            percent: 100
+            serviceName: svc-always-scaled-00001
+            serviceNamespace: demo
+            servicePort: 80
+      visibility: ExternalIP
+  status:
+    conditions:
+    - lastTransitionTime: "2023-03-09T07:03:13Z"
+      status: "True"
+      type: LoadBalancerReady
+    - lastTransitionTime: "2023-03-09T07:03:13Z"
+      status: "True"
+      type: NetworkConfigured
+    - lastTransitionTime: "2023-03-09T07:03:13Z"
+      status: "True"
+      type: Ready
+    observedGeneration: 1
+    privateLoadBalancer:
+      ingress:
+      - domainInternal: knative-local-gateway.istio-system-reto.svc.cluster.local
+    publicLoadBalancer:
+      ingress:
+      - domainInternal: istio-ingressgateway.istio-system-reto.svc.cluster.local
+kind: List
+metadata:
+  resourceVersion: ""

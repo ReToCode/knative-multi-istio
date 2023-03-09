@@ -1,0 +1,53 @@
+apiVersion: serving.knative.dev/v1
+kind: Route
+metadata:
+  annotations:
+    serving.knative.dev/creator: kube:admin
+    serving.knative.dev/lastModifier: kube:admin
+    serving.knative.openshift.io/enablePassthrough: "true"
+  creationTimestamp: "2023-03-07T09:07:19Z"
+  finalizers:
+  - routes.serving.knative.dev
+  generation: 1
+  labels:
+    serving.knative.dev/service: svc-always-scaled
+  name: svc-always-scaled
+  namespace: demo
+  ownerReferences:
+  - apiVersion: serving.knative.dev/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: Service
+    name: svc-always-scaled
+    uid: 0f374560-0c2d-46c7-9de1-6fc056080cd7
+  resourceVersion: "82095"
+  uid: 738cb9d8-211e-468e-80e3-2a1885f12a44
+spec:
+  traffic:
+  - configurationName: svc-always-scaled
+    latestRevision: true
+    percent: 100
+status:
+  address:
+    url: http://svc-always-scaled.demo.svc.cluster.local
+  conditions:
+  - lastTransitionTime: "2023-03-07T09:07:32Z"
+    status: "True"
+    type: AllTrafficAssigned
+  - lastTransitionTime: "2023-03-07T09:07:32Z"
+    message: autoTLS is not enabled
+    reason: TLSNotEnabled
+    status: "True"
+    type: CertificateProvisioned
+  - lastTransitionTime: "2023-03-07T09:07:32Z"
+    status: "True"
+    type: IngressReady
+  - lastTransitionTime: "2023-03-07T09:07:32Z"
+    status: "True"
+    type: Ready
+  observedGeneration: 1
+  traffic:
+  - latestRevision: true
+    percent: 100
+    revisionName: svc-always-scaled-00001
+  url: https://svc-always-scaled-demo.apps.rlehmann-ocp-4-12.serverless.devcluster.openshift.com

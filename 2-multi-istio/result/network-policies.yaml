@@ -1,0 +1,719 @@
+apiVersion: v1
+items:
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{"maistra.io/mesh-generation":"2.3.1-1-1"},"labels":{"app":"istio","app.kubernetes.io/component":"mesh-config","app.kubernetes.io/instance":"istio-system-reto","app.kubernetes.io/managed-by":"maistra-istio-operator","app.kubernetes.io/name":"mesh-config","app.kubernetes.io/part-of":"istio","app.kubernetes.io/version":"2.3.1-1-1","maistra-version":"2.3.1","maistra.io/owner":"istio-system-reto","maistra.io/owner-name":"basic","release":"istio"},"name":"istio-expose-route-basic","namespace":"istio-system-reto","ownerReferences":[{"apiVersion":"maistra.io/v2","blockOwnerDeletion":true,"controller":true,"kind":"ServiceMeshControlPlane","name":"basic","uid":"b4ba9f22-653b-4cdf-a5c2-022ecc3cf693"}]},"spec":{"ingress":[{"from":[{"namespaceSelector":{"matchLabels":{"network.openshift.io/policy-group":"ingress"}}}]}],"podSelector":{"matchLabels":{"maistra.io/expose-route":"true"}}}}
+      maistra.io/mesh-generation: 2.3.1-1-1
+    creationTimestamp: "2023-03-07T09:17:43Z"
+    generation: 1
+    labels:
+      app: istio
+      app.kubernetes.io/component: mesh-config
+      app.kubernetes.io/instance: istio-system-reto
+      app.kubernetes.io/managed-by: maistra-istio-operator
+      app.kubernetes.io/name: mesh-config
+      app.kubernetes.io/part-of: istio
+      maistra-version: 2.3.1
+      maistra.io/member-of: istio-system-reto
+      release: istio
+    name: istio-expose-route-basic
+    namespace: demo
+    resourceVersion: "89157"
+    uid: cd4e9459-ece9-400e-b173-8cc06b79e5d5
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            network.openshift.io/policy-group: ingress
+    podSelector:
+      matchLabels:
+        maistra.io/expose-route: "true"
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{"maistra.io/mesh-generation":"2.3.1-1-1"},"labels":{"app":"istio","app.kubernetes.io/component":"mesh-config","app.kubernetes.io/instance":"istio-system-reto","app.kubernetes.io/managed-by":"maistra-istio-operator","app.kubernetes.io/name":"mesh-config","app.kubernetes.io/part-of":"istio","app.kubernetes.io/version":"2.3.1-1-1","maistra-version":"2.3.1","maistra.io/owner":"istio-system-reto","maistra.io/owner-name":"basic","release":"istio"},"name":"istio-mesh-basic","namespace":"istio-system-reto","ownerReferences":[{"apiVersion":"maistra.io/v2","blockOwnerDeletion":true,"controller":true,"kind":"ServiceMeshControlPlane","name":"basic","uid":"b4ba9f22-653b-4cdf-a5c2-022ecc3cf693"}]},"spec":{"ingress":[{"from":[{"namespaceSelector":{"matchLabels":{"maistra.io/member-of":"istio-system-reto"}}}]}]}}
+      maistra.io/mesh-generation: 2.3.1-1-1
+    creationTimestamp: "2023-03-07T09:17:43Z"
+    generation: 1
+    labels:
+      app: istio
+      app.kubernetes.io/component: mesh-config
+      app.kubernetes.io/instance: istio-system-reto
+      app.kubernetes.io/managed-by: maistra-istio-operator
+      app.kubernetes.io/name: mesh-config
+      app.kubernetes.io/part-of: istio
+      maistra-version: 2.3.1
+      maistra.io/member-of: istio-system-reto
+      release: istio
+    name: istio-mesh-basic
+    namespace: demo
+    resourceVersion: "89155"
+    uid: 9ac741a6-e357-4a90-a91d-da5dd8239a9a
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            maistra.io/member-of: istio-system-reto
+    podSelector: {}
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{"maistra.io/mesh-generation":"2.3.1-1-1"},"labels":{"app":"istio","app.kubernetes.io/component":"mesh-config","app.kubernetes.io/instance":"istio-system-reto","app.kubernetes.io/managed-by":"maistra-istio-operator","app.kubernetes.io/name":"mesh-config","app.kubernetes.io/part-of":"istio","app.kubernetes.io/version":"2.3.1-1-1","maistra-version":"2.3.1","maistra.io/owner":"istio-system-reto","maistra.io/owner-name":"basic","release":"istio"},"name":"istio-expose-route-basic","namespace":"istio-system-reto","ownerReferences":[{"apiVersion":"maistra.io/v2","blockOwnerDeletion":true,"controller":true,"kind":"ServiceMeshControlPlane","name":"basic","uid":"b4ba9f22-653b-4cdf-a5c2-022ecc3cf693"}]},"spec":{"ingress":[{"from":[{"namespaceSelector":{"matchLabels":{"network.openshift.io/policy-group":"ingress"}}}]}],"podSelector":{"matchLabels":{"maistra.io/expose-route":"true"}}}}
+      maistra.io/mesh-generation: 2.3.1-1-1
+    creationTimestamp: "2023-03-07T09:16:28Z"
+    generation: 1
+    labels:
+      app: istio
+      app.kubernetes.io/component: mesh-config
+      app.kubernetes.io/instance: istio-system-reto
+      app.kubernetes.io/managed-by: maistra-istio-operator
+      app.kubernetes.io/name: mesh-config
+      app.kubernetes.io/part-of: istio
+      app.kubernetes.io/version: 2.3.1-1-1
+      maistra-version: 2.3.1
+      maistra.io/owner: istio-system-reto
+      maistra.io/owner-name: basic
+      release: istio
+    name: istio-expose-route-basic
+    namespace: istio-system-reto
+    ownerReferences:
+    - apiVersion: maistra.io/v2
+      blockOwnerDeletion: true
+      controller: true
+      kind: ServiceMeshControlPlane
+      name: basic
+      uid: b4ba9f22-653b-4cdf-a5c2-022ecc3cf693
+    resourceVersion: "88101"
+    uid: 31af3160-d825-4c24-96a3-fe3914f8a76c
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            network.openshift.io/policy-group: ingress
+    podSelector:
+      matchLabels:
+        maistra.io/expose-route: "true"
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{"maistra.io/internal":"true","maistra.io/mesh-generation":"2.3.1-1-1"},"labels":{"app":"istio-ingressgateway","app.kubernetes.io/component":"istio-ingress","app.kubernetes.io/instance":"istio-system-reto","app.kubernetes.io/managed-by":"maistra-istio-operator","app.kubernetes.io/name":"istio-ingress","app.kubernetes.io/part-of":"istio","app.kubernetes.io/version":"2.3.1-1-1","istio":"ingressgateway","maistra-version":"2.3.1","maistra.io/owner":"istio-system-reto","maistra.io/owner-name":"basic","release":"istio"},"name":"istio-ingressgateway","namespace":"istio-system-reto","ownerReferences":[{"apiVersion":"maistra.io/v2","blockOwnerDeletion":true,"controller":true,"kind":"ServiceMeshControlPlane","name":"basic","uid":"b4ba9f22-653b-4cdf-a5c2-022ecc3cf693"}]},"spec":{"ingress":[{}],"podSelector":{"matchLabels":{"app":"istio-ingressgateway","istio":"ingressgateway"}}}}
+      maistra.io/internal: "true"
+      maistra.io/mesh-generation: 2.3.1-1-1
+    creationTimestamp: "2023-03-07T09:16:28Z"
+    generation: 1
+    labels:
+      app: istio-ingressgateway
+      app.kubernetes.io/component: istio-ingress
+      app.kubernetes.io/instance: istio-system-reto
+      app.kubernetes.io/managed-by: maistra-istio-operator
+      app.kubernetes.io/name: istio-ingress
+      app.kubernetes.io/part-of: istio
+      app.kubernetes.io/version: 2.3.1-1-1
+      istio: ingressgateway
+      maistra-version: 2.3.1
+      maistra.io/owner: istio-system-reto
+      maistra.io/owner-name: basic
+      release: istio
+    name: istio-ingressgateway
+    namespace: istio-system-reto
+    ownerReferences:
+    - apiVersion: maistra.io/v2
+      blockOwnerDeletion: true
+      controller: true
+      kind: ServiceMeshControlPlane
+      name: basic
+      uid: b4ba9f22-653b-4cdf-a5c2-022ecc3cf693
+    resourceVersion: "88120"
+    uid: 57febcec-7a8b-4ecc-99ac-edc13aa22b64
+  spec:
+    ingress:
+    - {}
+    podSelector:
+      matchLabels:
+        app: istio-ingressgateway
+        istio: ingressgateway
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{"maistra.io/internal":"true","maistra.io/mesh-generation":"2.3.1-1-1"},"labels":{"app":"istiod","app.kubernetes.io/component":"istio-discovery","app.kubernetes.io/instance":"istio-system-reto","app.kubernetes.io/managed-by":"maistra-istio-operator","app.kubernetes.io/name":"istio-discovery","app.kubernetes.io/part-of":"istio","app.kubernetes.io/version":"2.3.1-1-1","istio":"pilot","istio.io/rev":"basic","maistra-version":"2.3.1","maistra.io/owner":"istio-system-reto","maistra.io/owner-name":"basic","release":"istio"},"name":"istio-istiod-basic","namespace":"istio-system-reto","ownerReferences":[{"apiVersion":"maistra.io/v2","blockOwnerDeletion":true,"controller":true,"kind":"ServiceMeshControlPlane","name":"basic","uid":"b4ba9f22-653b-4cdf-a5c2-022ecc3cf693"}]},"spec":{"ingress":[{"port":"webhook","ports":null}],"podSelector":{"matchLabels":{"app":"istiod","istio.io/rev":"basic"}}}}
+      maistra.io/internal: "true"
+      maistra.io/mesh-generation: 2.3.1-1-1
+    creationTimestamp: "2023-03-07T09:16:24Z"
+    generation: 1
+    labels:
+      app: istiod
+      app.kubernetes.io/component: istio-discovery
+      app.kubernetes.io/instance: istio-system-reto
+      app.kubernetes.io/managed-by: maistra-istio-operator
+      app.kubernetes.io/name: istio-discovery
+      app.kubernetes.io/part-of: istio
+      app.kubernetes.io/version: 2.3.1-1-1
+      istio: pilot
+      istio.io/rev: basic
+      maistra-version: 2.3.1
+      maistra.io/owner: istio-system-reto
+      maistra.io/owner-name: basic
+      release: istio
+    name: istio-istiod-basic
+    namespace: istio-system-reto
+    ownerReferences:
+    - apiVersion: maistra.io/v2
+      blockOwnerDeletion: true
+      controller: true
+      kind: ServiceMeshControlPlane
+      name: basic
+      uid: b4ba9f22-653b-4cdf-a5c2-022ecc3cf693
+    resourceVersion: "87987"
+    uid: 93ca69a8-2a77-40ce-b51d-d6f0a5169a3d
+  spec:
+    ingress:
+    - {}
+    podSelector:
+      matchLabels:
+        app: istiod
+        istio.io/rev: basic
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{"maistra.io/internal":"true","maistra.io/mesh-generation":"2.3.1-1-1"},"labels":{"app":"jaeger","app.kubernetes.io/component":"tracing","app.kubernetes.io/instance":"istio-system-reto","app.kubernetes.io/managed-by":"maistra-istio-operator","app.kubernetes.io/name":"tracing","app.kubernetes.io/part-of":"istio","app.kubernetes.io/version":"2.3.1-1-1","maistra-version":"2.3.1","maistra.io/owner":"istio-system-reto","maistra.io/owner-name":"basic","release":"istio"},"name":"istio-jaeger-ingress","namespace":"istio-system-reto","ownerReferences":[{"apiVersion":"maistra.io/v2","blockOwnerDeletion":true,"controller":true,"kind":"ServiceMeshControlPlane","name":"basic","uid":"b4ba9f22-653b-4cdf-a5c2-022ecc3cf693"}]},"spec":{"ingress":[{"port":8443,"ports":null}],"podSelector":{"matchExpressions":[{"key":"app.kubernetes.io/component","operator":"In","values":["all-in-one","query"]}],"matchLabels":{"app.kubernetes.io/instance":"jaeger","app.kubernetes.io/managed-by":"jaeger-operator","app.kubernetes.io/part-of":"jaeger"}}}}
+      maistra.io/internal: "true"
+      maistra.io/mesh-generation: 2.3.1-1-1
+    creationTimestamp: "2023-03-07T09:16:28Z"
+    generation: 1
+    labels:
+      app: jaeger
+      app.kubernetes.io/component: tracing
+      app.kubernetes.io/instance: istio-system-reto
+      app.kubernetes.io/managed-by: maistra-istio-operator
+      app.kubernetes.io/name: tracing
+      app.kubernetes.io/part-of: istio
+      app.kubernetes.io/version: 2.3.1-1-1
+      maistra-version: 2.3.1
+      maistra.io/owner: istio-system-reto
+      maistra.io/owner-name: basic
+      release: istio
+    name: istio-jaeger-ingress
+    namespace: istio-system-reto
+    ownerReferences:
+    - apiVersion: maistra.io/v2
+      blockOwnerDeletion: true
+      controller: true
+      kind: ServiceMeshControlPlane
+      name: basic
+      uid: b4ba9f22-653b-4cdf-a5c2-022ecc3cf693
+    resourceVersion: "88109"
+    uid: 0e7d78e4-bbde-4909-9360-ff9ec415e012
+  spec:
+    ingress:
+    - {}
+    podSelector:
+      matchExpressions:
+      - key: app.kubernetes.io/component
+        operator: In
+        values:
+        - all-in-one
+        - query
+      matchLabels:
+        app.kubernetes.io/instance: jaeger
+        app.kubernetes.io/managed-by: jaeger-operator
+        app.kubernetes.io/part-of: jaeger
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{"maistra.io/mesh-generation":"2.3.1-1-1"},"labels":{"app":"istio","app.kubernetes.io/component":"mesh-config","app.kubernetes.io/instance":"istio-system-reto","app.kubernetes.io/managed-by":"maistra-istio-operator","app.kubernetes.io/name":"mesh-config","app.kubernetes.io/part-of":"istio","app.kubernetes.io/version":"2.3.1-1-1","maistra-version":"2.3.1","maistra.io/owner":"istio-system-reto","maistra.io/owner-name":"basic","release":"istio"},"name":"istio-mesh-basic","namespace":"istio-system-reto","ownerReferences":[{"apiVersion":"maistra.io/v2","blockOwnerDeletion":true,"controller":true,"kind":"ServiceMeshControlPlane","name":"basic","uid":"b4ba9f22-653b-4cdf-a5c2-022ecc3cf693"}]},"spec":{"ingress":[{"from":[{"namespaceSelector":{"matchLabels":{"maistra.io/member-of":"istio-system-reto"}}}]}]}}
+      maistra.io/mesh-generation: 2.3.1-1-1
+    creationTimestamp: "2023-03-07T09:16:28Z"
+    generation: 1
+    labels:
+      app: istio
+      app.kubernetes.io/component: mesh-config
+      app.kubernetes.io/instance: istio-system-reto
+      app.kubernetes.io/managed-by: maistra-istio-operator
+      app.kubernetes.io/name: mesh-config
+      app.kubernetes.io/part-of: istio
+      app.kubernetes.io/version: 2.3.1-1-1
+      maistra-version: 2.3.1
+      maistra.io/owner: istio-system-reto
+      maistra.io/owner-name: basic
+      release: istio
+    name: istio-mesh-basic
+    namespace: istio-system-reto
+    ownerReferences:
+    - apiVersion: maistra.io/v2
+      blockOwnerDeletion: true
+      controller: true
+      kind: ServiceMeshControlPlane
+      name: basic
+      uid: b4ba9f22-653b-4cdf-a5c2-022ecc3cf693
+    resourceVersion: "88100"
+    uid: a9fc42c9-168c-4c1b-90a0-97d2fc74236d
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            maistra.io/member-of: istio-system-reto
+    podSelector: {}
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{"maistra.io/mesh-generation":"2.3.1-1-1"},"labels":{"app":"istio","app.kubernetes.io/component":"mesh-config","app.kubernetes.io/instance":"istio-system","app.kubernetes.io/managed-by":"maistra-istio-operator","app.kubernetes.io/name":"mesh-config","app.kubernetes.io/part-of":"istio","app.kubernetes.io/version":"2.3.1-1-1","maistra-version":"2.3.1","maistra.io/owner":"istio-system","maistra.io/owner-name":"basic","release":"istio"},"name":"istio-expose-route-basic","namespace":"istio-system","ownerReferences":[{"apiVersion":"maistra.io/v2","blockOwnerDeletion":true,"controller":true,"kind":"ServiceMeshControlPlane","name":"basic","uid":"6da14bc5-df4b-48e2-963e-cec8240ff223"}]},"spec":{"ingress":[{"from":[{"namespaceSelector":{"matchLabels":{"network.openshift.io/policy-group":"ingress"}}}]}],"podSelector":{"matchLabels":{"maistra.io/expose-route":"true"}}}}
+      maistra.io/mesh-generation: 2.3.1-1-1
+    creationTimestamp: "2023-03-07T08:55:33Z"
+    generation: 1
+    labels:
+      app: istio
+      app.kubernetes.io/component: mesh-config
+      app.kubernetes.io/instance: istio-system
+      app.kubernetes.io/managed-by: maistra-istio-operator
+      app.kubernetes.io/name: mesh-config
+      app.kubernetes.io/part-of: istio
+      app.kubernetes.io/version: 2.3.1-1-1
+      maistra-version: 2.3.1
+      maistra.io/owner: istio-system
+      maistra.io/owner-name: basic
+      release: istio
+    name: istio-expose-route-basic
+    namespace: istio-system
+    ownerReferences:
+    - apiVersion: maistra.io/v2
+      blockOwnerDeletion: true
+      controller: true
+      kind: ServiceMeshControlPlane
+      name: basic
+      uid: 6da14bc5-df4b-48e2-963e-cec8240ff223
+    resourceVersion: "73477"
+    uid: b7ee600f-7b6e-48bd-98c3-f5de2792f164
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            network.openshift.io/policy-group: ingress
+    podSelector:
+      matchLabels:
+        maistra.io/expose-route: "true"
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{"maistra.io/internal":"true","maistra.io/mesh-generation":"2.3.1-1-1"},"labels":{"app":"istio-ingressgateway","app.kubernetes.io/component":"istio-ingress","app.kubernetes.io/instance":"istio-system","app.kubernetes.io/managed-by":"maistra-istio-operator","app.kubernetes.io/name":"istio-ingress","app.kubernetes.io/part-of":"istio","app.kubernetes.io/version":"2.3.1-1-1","istio":"ingressgateway","maistra-version":"2.3.1","maistra.io/owner":"istio-system","maistra.io/owner-name":"basic","release":"istio"},"name":"istio-ingressgateway","namespace":"istio-system","ownerReferences":[{"apiVersion":"maistra.io/v2","blockOwnerDeletion":true,"controller":true,"kind":"ServiceMeshControlPlane","name":"basic","uid":"6da14bc5-df4b-48e2-963e-cec8240ff223"}]},"spec":{"ingress":[{}],"podSelector":{"matchLabels":{"app":"istio-ingressgateway","istio":"ingressgateway"}}}}
+      maistra.io/internal: "true"
+      maistra.io/mesh-generation: 2.3.1-1-1
+    creationTimestamp: "2023-03-07T08:55:33Z"
+    generation: 1
+    labels:
+      app: istio-ingressgateway
+      app.kubernetes.io/component: istio-ingress
+      app.kubernetes.io/instance: istio-system
+      app.kubernetes.io/managed-by: maistra-istio-operator
+      app.kubernetes.io/name: istio-ingress
+      app.kubernetes.io/part-of: istio
+      app.kubernetes.io/version: 2.3.1-1-1
+      istio: ingressgateway
+      maistra-version: 2.3.1
+      maistra.io/owner: istio-system
+      maistra.io/owner-name: basic
+      release: istio
+    name: istio-ingressgateway
+    namespace: istio-system
+    ownerReferences:
+    - apiVersion: maistra.io/v2
+      blockOwnerDeletion: true
+      controller: true
+      kind: ServiceMeshControlPlane
+      name: basic
+      uid: 6da14bc5-df4b-48e2-963e-cec8240ff223
+    resourceVersion: "73494"
+    uid: 96d946e0-b666-448b-ae41-57b283689d4b
+  spec:
+    ingress:
+    - {}
+    podSelector:
+      matchLabels:
+        app: istio-ingressgateway
+        istio: ingressgateway
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{"maistra.io/internal":"true","maistra.io/mesh-generation":"2.3.1-1-1"},"labels":{"app":"istiod","app.kubernetes.io/component":"istio-discovery","app.kubernetes.io/instance":"istio-system","app.kubernetes.io/managed-by":"maistra-istio-operator","app.kubernetes.io/name":"istio-discovery","app.kubernetes.io/part-of":"istio","app.kubernetes.io/version":"2.3.1-1-1","istio":"pilot","istio.io/rev":"basic","maistra-version":"2.3.1","maistra.io/owner":"istio-system","maistra.io/owner-name":"basic","release":"istio"},"name":"istio-istiod-basic","namespace":"istio-system","ownerReferences":[{"apiVersion":"maistra.io/v2","blockOwnerDeletion":true,"controller":true,"kind":"ServiceMeshControlPlane","name":"basic","uid":"6da14bc5-df4b-48e2-963e-cec8240ff223"}]},"spec":{"ingress":[{"port":"webhook","ports":null}],"podSelector":{"matchLabels":{"app":"istiod","istio.io/rev":"basic"}}}}
+      maistra.io/internal: "true"
+      maistra.io/mesh-generation: 2.3.1-1-1
+    creationTimestamp: "2023-03-07T08:55:08Z"
+    generation: 1
+    labels:
+      app: istiod
+      app.kubernetes.io/component: istio-discovery
+      app.kubernetes.io/instance: istio-system
+      app.kubernetes.io/managed-by: maistra-istio-operator
+      app.kubernetes.io/name: istio-discovery
+      app.kubernetes.io/part-of: istio
+      app.kubernetes.io/version: 2.3.1-1-1
+      istio: pilot
+      istio.io/rev: basic
+      maistra-version: 2.3.1
+      maistra.io/owner: istio-system
+      maistra.io/owner-name: basic
+      release: istio
+    name: istio-istiod-basic
+    namespace: istio-system
+    ownerReferences:
+    - apiVersion: maistra.io/v2
+      blockOwnerDeletion: true
+      controller: true
+      kind: ServiceMeshControlPlane
+      name: basic
+      uid: 6da14bc5-df4b-48e2-963e-cec8240ff223
+    resourceVersion: "73109"
+    uid: 1e5df416-18d5-471d-aa20-69fcf4ebc378
+  spec:
+    ingress:
+    - {}
+    podSelector:
+      matchLabels:
+        app: istiod
+        istio.io/rev: basic
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{"maistra.io/internal":"true","maistra.io/mesh-generation":"2.3.1-1-1"},"labels":{"app":"jaeger","app.kubernetes.io/component":"tracing","app.kubernetes.io/instance":"istio-system","app.kubernetes.io/managed-by":"maistra-istio-operator","app.kubernetes.io/name":"tracing","app.kubernetes.io/part-of":"istio","app.kubernetes.io/version":"2.3.1-1-1","maistra-version":"2.3.1","maistra.io/owner":"istio-system","maistra.io/owner-name":"basic","release":"istio"},"name":"istio-jaeger-ingress","namespace":"istio-system","ownerReferences":[{"apiVersion":"maistra.io/v2","blockOwnerDeletion":true,"controller":true,"kind":"ServiceMeshControlPlane","name":"basic","uid":"6da14bc5-df4b-48e2-963e-cec8240ff223"}]},"spec":{"ingress":[{"port":8443,"ports":null}],"podSelector":{"matchExpressions":[{"key":"app.kubernetes.io/component","operator":"In","values":["all-in-one","query"]}],"matchLabels":{"app.kubernetes.io/instance":"jaeger","app.kubernetes.io/managed-by":"jaeger-operator","app.kubernetes.io/part-of":"jaeger"}}}}
+      maistra.io/internal: "true"
+      maistra.io/mesh-generation: 2.3.1-1-1
+    creationTimestamp: "2023-03-07T08:55:33Z"
+    generation: 1
+    labels:
+      app: jaeger
+      app.kubernetes.io/component: tracing
+      app.kubernetes.io/instance: istio-system
+      app.kubernetes.io/managed-by: maistra-istio-operator
+      app.kubernetes.io/name: tracing
+      app.kubernetes.io/part-of: istio
+      app.kubernetes.io/version: 2.3.1-1-1
+      maistra-version: 2.3.1
+      maistra.io/owner: istio-system
+      maistra.io/owner-name: basic
+      release: istio
+    name: istio-jaeger-ingress
+    namespace: istio-system
+    ownerReferences:
+    - apiVersion: maistra.io/v2
+      blockOwnerDeletion: true
+      controller: true
+      kind: ServiceMeshControlPlane
+      name: basic
+      uid: 6da14bc5-df4b-48e2-963e-cec8240ff223
+    resourceVersion: "73485"
+    uid: 6a0ced32-3b7e-4cd1-ba2e-cf67c3741aea
+  spec:
+    ingress:
+    - {}
+    podSelector:
+      matchExpressions:
+      - key: app.kubernetes.io/component
+        operator: In
+        values:
+        - all-in-one
+        - query
+      matchLabels:
+        app.kubernetes.io/instance: jaeger
+        app.kubernetes.io/managed-by: jaeger-operator
+        app.kubernetes.io/part-of: jaeger
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{"maistra.io/mesh-generation":"2.3.1-1-1"},"labels":{"app":"istio","app.kubernetes.io/component":"mesh-config","app.kubernetes.io/instance":"istio-system","app.kubernetes.io/managed-by":"maistra-istio-operator","app.kubernetes.io/name":"mesh-config","app.kubernetes.io/part-of":"istio","app.kubernetes.io/version":"2.3.1-1-1","maistra-version":"2.3.1","maistra.io/owner":"istio-system","maistra.io/owner-name":"basic","release":"istio"},"name":"istio-mesh-basic","namespace":"istio-system","ownerReferences":[{"apiVersion":"maistra.io/v2","blockOwnerDeletion":true,"controller":true,"kind":"ServiceMeshControlPlane","name":"basic","uid":"6da14bc5-df4b-48e2-963e-cec8240ff223"}]},"spec":{"ingress":[{"from":[{"namespaceSelector":{"matchLabels":{"maistra.io/member-of":"istio-system"}}}]}]}}
+      maistra.io/mesh-generation: 2.3.1-1-1
+    creationTimestamp: "2023-03-07T08:55:33Z"
+    generation: 1
+    labels:
+      app: istio
+      app.kubernetes.io/component: mesh-config
+      app.kubernetes.io/instance: istio-system
+      app.kubernetes.io/managed-by: maistra-istio-operator
+      app.kubernetes.io/name: mesh-config
+      app.kubernetes.io/part-of: istio
+      app.kubernetes.io/version: 2.3.1-1-1
+      maistra-version: 2.3.1
+      maistra.io/owner: istio-system
+      maistra.io/owner-name: basic
+      release: istio
+    name: istio-mesh-basic
+    namespace: istio-system
+    ownerReferences:
+    - apiVersion: maistra.io/v2
+      blockOwnerDeletion: true
+      controller: true
+      kind: ServiceMeshControlPlane
+      name: basic
+      uid: 6da14bc5-df4b-48e2-963e-cec8240ff223
+    resourceVersion: "73476"
+    uid: 9a0bff0b-c16e-4f9b-b9ae-6720fa69a3f5
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            maistra.io/member-of: istio-system
+    podSelector: {}
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"labels":{"networking.knative.dev/ingress-provider":"istio","serving.knative.dev/release":"devel"},"name":"allow-from-openshift-monitoring-ns","namespace":"knative-serving","ownerReferences":[{"apiVersion":"operator.knative.dev/v1beta1","blockOwnerDeletion":true,"controller":true,"kind":"KnativeServing","name":"knative-serving","uid":"6ae91720-1687-4b20-9510-b81b81e7fb71"}]},"spec":{"ingress":[{"from":[{"namespaceSelector":{"matchLabels":{"name":"openshift-monitoring"}}}]}],"podSelector":{},"policyTypes":["Ingress"]}}
+    creationTimestamp: "2023-03-07T09:04:58Z"
+    generation: 1
+    labels:
+      networking.knative.dev/ingress-provider: istio
+      serving.knative.dev/release: devel
+    name: allow-from-openshift-monitoring-ns
+    namespace: knative-serving
+    ownerReferences:
+    - apiVersion: operator.knative.dev/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: KnativeServing
+      name: knative-serving
+      uid: 6ae91720-1687-4b20-9510-b81b81e7fb71
+    resourceVersion: "80119"
+    uid: def7d73c-ff94-455c-b688-626bf5edded0
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            name: openshift-monitoring
+    podSelector: {}
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"labels":{"app":"domainmapping-webhook","networking.knative.dev/ingress-provider":"istio","serving.knative.dev/release":"devel"},"name":"domainmapping-webhook","namespace":"knative-serving","ownerReferences":[{"apiVersion":"operator.knative.dev/v1beta1","blockOwnerDeletion":true,"controller":true,"kind":"KnativeServing","name":"knative-serving","uid":"6ae91720-1687-4b20-9510-b81b81e7fb71"}]},"spec":{"ingress":[{}],"podSelector":{"matchLabels":{"app":"domainmapping-webhook"}}}}
+    creationTimestamp: "2023-03-07T09:04:57Z"
+    generation: 1
+    labels:
+      app: domainmapping-webhook
+      networking.knative.dev/ingress-provider: istio
+      serving.knative.dev/release: devel
+    name: domainmapping-webhook
+    namespace: knative-serving
+    ownerReferences:
+    - apiVersion: operator.knative.dev/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: KnativeServing
+      name: knative-serving
+      uid: 6ae91720-1687-4b20-9510-b81b81e7fb71
+    resourceVersion: "80114"
+    uid: 233fc312-4535-4fe0-84e8-c1d26464d7c7
+  spec:
+    ingress:
+    - {}
+    podSelector:
+      matchLabels:
+        app: domainmapping-webhook
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{"maistra.io/mesh-generation":"2.3.1-1-1"},"labels":{"app":"istio","app.kubernetes.io/component":"mesh-config","app.kubernetes.io/instance":"istio-system-reto","app.kubernetes.io/managed-by":"maistra-istio-operator","app.kubernetes.io/name":"mesh-config","app.kubernetes.io/part-of":"istio","app.kubernetes.io/version":"2.3.1-1-1","maistra-version":"2.3.1","maistra.io/owner":"istio-system-reto","maistra.io/owner-name":"basic","release":"istio"},"name":"istio-expose-route-basic","namespace":"istio-system-reto","ownerReferences":[{"apiVersion":"maistra.io/v2","blockOwnerDeletion":true,"controller":true,"kind":"ServiceMeshControlPlane","name":"basic","uid":"b4ba9f22-653b-4cdf-a5c2-022ecc3cf693"}]},"spec":{"ingress":[{"from":[{"namespaceSelector":{"matchLabels":{"network.openshift.io/policy-group":"ingress"}}}]}],"podSelector":{"matchLabels":{"maistra.io/expose-route":"true"}}}}
+      maistra.io/mesh-generation: 2.3.1-1-1
+    creationTimestamp: "2023-03-07T09:17:43Z"
+    generation: 1
+    labels:
+      app: istio
+      app.kubernetes.io/component: mesh-config
+      app.kubernetes.io/instance: istio-system-reto
+      app.kubernetes.io/managed-by: maistra-istio-operator
+      app.kubernetes.io/name: mesh-config
+      app.kubernetes.io/part-of: istio
+      maistra-version: 2.3.1
+      maistra.io/member-of: istio-system-reto
+      release: istio
+    name: istio-expose-route-basic
+    namespace: knative-serving
+    resourceVersion: "89161"
+    uid: caa74bb9-0e26-46fb-88b6-e494601d2c46
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            network.openshift.io/policy-group: ingress
+    podSelector:
+      matchLabels:
+        maistra.io/expose-route: "true"
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{"maistra.io/mesh-generation":"2.3.1-1-1"},"labels":{"app":"istio","app.kubernetes.io/component":"mesh-config","app.kubernetes.io/instance":"istio-system-reto","app.kubernetes.io/managed-by":"maistra-istio-operator","app.kubernetes.io/name":"mesh-config","app.kubernetes.io/part-of":"istio","app.kubernetes.io/version":"2.3.1-1-1","maistra-version":"2.3.1","maistra.io/owner":"istio-system-reto","maistra.io/owner-name":"basic","release":"istio"},"name":"istio-mesh-basic","namespace":"istio-system-reto","ownerReferences":[{"apiVersion":"maistra.io/v2","blockOwnerDeletion":true,"controller":true,"kind":"ServiceMeshControlPlane","name":"basic","uid":"b4ba9f22-653b-4cdf-a5c2-022ecc3cf693"}]},"spec":{"ingress":[{"from":[{"namespaceSelector":{"matchLabels":{"maistra.io/member-of":"istio-system-reto"}}}]}]}}
+      maistra.io/mesh-generation: 2.3.1-1-1
+    creationTimestamp: "2023-03-07T09:17:43Z"
+    generation: 1
+    labels:
+      app: istio
+      app.kubernetes.io/component: mesh-config
+      app.kubernetes.io/instance: istio-system-reto
+      app.kubernetes.io/managed-by: maistra-istio-operator
+      app.kubernetes.io/name: mesh-config
+      app.kubernetes.io/part-of: istio
+      maistra-version: 2.3.1
+      maistra.io/member-of: istio-system-reto
+      release: istio
+    name: istio-mesh-basic
+    namespace: knative-serving
+    resourceVersion: "89160"
+    uid: 41ddd063-4b6f-46f9-a93c-3ca52d46aa9e
+  spec:
+    ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            maistra.io/member-of: istio-system-reto
+    podSelector: {}
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"labels":{"app":"net-istio-webhook","networking.knative.dev/ingress-provider":"istio","serving.knative.dev/release":"devel"},"name":"net-istio-webhook","namespace":"knative-serving","ownerReferences":[{"apiVersion":"operator.knative.dev/v1beta1","blockOwnerDeletion":true,"controller":true,"kind":"KnativeServing","name":"knative-serving","uid":"6ae91720-1687-4b20-9510-b81b81e7fb71"}]},"spec":{"ingress":[{}],"podSelector":{"matchLabels":{"app":"net-istio-webhook"}}}}
+    creationTimestamp: "2023-03-07T09:04:57Z"
+    generation: 1
+    labels:
+      app: net-istio-webhook
+      networking.knative.dev/ingress-provider: istio
+      serving.knative.dev/release: devel
+    name: net-istio-webhook
+    namespace: knative-serving
+    ownerReferences:
+    - apiVersion: operator.knative.dev/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: KnativeServing
+      name: knative-serving
+      uid: 6ae91720-1687-4b20-9510-b81b81e7fb71
+    resourceVersion: "80113"
+    uid: ab34dedb-5295-4e8a-a782-ce345d91e227
+  spec:
+    ingress:
+    - {}
+    podSelector:
+      matchLabels:
+        app: net-istio-webhook
+    policyTypes:
+    - Ingress
+  status: {}
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"labels":{"app":"webhook","networking.knative.dev/ingress-provider":"istio","serving.knative.dev/release":"devel"},"name":"webhook","namespace":"knative-serving","ownerReferences":[{"apiVersion":"operator.knative.dev/v1beta1","blockOwnerDeletion":true,"controller":true,"kind":"KnativeServing","name":"knative-serving","uid":"6ae91720-1687-4b20-9510-b81b81e7fb71"}]},"spec":{"ingress":[{}],"podSelector":{"matchLabels":{"app":"webhook"}}}}
+    creationTimestamp: "2023-03-07T09:04:57Z"
+    generation: 1
+    labels:
+      app: webhook
+      networking.knative.dev/ingress-provider: istio
+      serving.knative.dev/release: devel
+    name: webhook
+    namespace: knative-serving
+    ownerReferences:
+    - apiVersion: operator.knative.dev/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: KnativeServing
+      name: knative-serving
+      uid: 6ae91720-1687-4b20-9510-b81b81e7fb71
+    resourceVersion: "80112"
+    uid: 6956545b-57e1-458b-bc01-834aa39b3759
+  spec:
+    ingress:
+    - {}
+    podSelector:
+      matchLabels:
+        app: webhook
+    policyTypes:
+    - Ingress
+  status: {}
+kind: List
+metadata:
+  resourceVersion: ""

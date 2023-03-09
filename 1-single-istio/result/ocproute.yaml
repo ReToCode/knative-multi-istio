@@ -1,0 +1,44 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    haproxy.router.openshift.io/timeout: 600s
+    networking.internal.knative.dev/rollout: '{"configurations":[{"configurationName":"svc-always-scaled","percent":100,"revisions":[{"revisionName":"svc-always-scaled-00001","percent":100}],"stepParams":{}}]}'
+    networking.knative.dev/ingress.class: istio.ingress.networking.knative.dev
+    serving.knative.dev/creator: kube:admin
+    serving.knative.dev/lastModifier: kube:admin
+    serving.knative.openshift.io/enablePassthrough: "true"
+  creationTimestamp: "2023-03-07T09:07:32Z"
+  labels:
+    networking.internal.knative.dev/ingress: svc-always-scaled
+    serving.knative.dev/route: svc-always-scaled
+    serving.knative.dev/routeNamespace: demo
+    serving.knative.dev/service: svc-always-scaled
+    serving.knative.openshift.io/ingressName: svc-always-scaled
+    serving.knative.openshift.io/ingressNamespace: demo
+  name: route-31c4f5c2-b010-4695-82dc-384a883821d6-373938306163
+  namespace: istio-system
+  resourceVersion: "82097"
+  uid: 94058cdb-d4d4-47b0-a0dd-1730fef862a9
+spec:
+  host: svc-always-scaled-demo.apps.rlehmann-ocp-4-12.serverless.devcluster.openshift.com
+  port:
+    targetPort: https
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: passthrough
+  to:
+    kind: Service
+    name: istio-ingressgateway
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress:
+  - conditions:
+    - lastTransitionTime: "2023-03-07T09:07:32Z"
+      status: "True"
+      type: Admitted
+    host: svc-always-scaled-demo.apps.rlehmann-ocp-4-12.serverless.devcluster.openshift.com
+    routerCanonicalHostname: router-default.apps.rlehmann-ocp-4-12.serverless.devcluster.openshift.com
+    routerName: default
+    wildcardPolicy: None
