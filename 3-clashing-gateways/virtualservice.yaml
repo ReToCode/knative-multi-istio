@@ -1,0 +1,20 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: hello-k8s
+  namespace: clash
+spec:
+  gateways:
+  - clash/clashing-ingress-gateway
+  hosts:
+  - hello-k8s.apps.rlehmann-ocp-4-12.serverless.devcluster.openshift.com
+  http:
+  - match:
+      - uri:
+          prefix: /
+    route:
+    - destination:
+        host: hello-k8s.clash.svc.cluster.local
+        port:
+          number: 80
+      weight: 100
