@@ -16,7 +16,7 @@ items:
         number: 443
         protocol: HTTPS
       tls:
-        credentialName: wildcard-certs
+        credentialName: wildcard-certs-clash
         mode: SIMPLE
 kind: List
 metadata:
