@@ -9,6 +9,8 @@ This repository contains findings around installing `Knative` on a cluster where
 * The mesh that `Serverless` is part of has to be distinct and only for `Serverless` workloads, as additional configuration like gateways might interfere with the automated mesh configuration by `Serverless`.
 * `Istio` only allows one gateway to claim a wildcard host binding (`hosts: *`) on the same port (`port: 443`). So either the `knative-ingress-gateway` and `knative-local-gateway` have to be unique or `Serverless` does require its own `istio-ingressgateway`.
 * Cluster external serverless-services are expected to be called via `OpenShift ingress` using `OpenShift Routes`.
+* Migration/Changes of the SMMR are not supported. The only way to change the Service Mesh is to uninstall and reinstall OpenShift Serverless.
+
 
 ## Reference setup
 ```bash
